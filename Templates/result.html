@@ -58,7 +58,7 @@
                         <p>{{ detail.Risk_Level }}</p>
                     </div>
                     <div class="details-div">
-                        <h4>Abnormalities</h4>
+                        <h4>Risk_Factors</h4>
                         <p>{{detail.Risk_Factors}}</p>
                     </div>
                     {% endfor %}
@@ -95,9 +95,10 @@
         </section>
         <section class="section-2">
             <div class="diagnosis">
-                <h1>Common Symptoms</h1>
+                <h1>Symptoms</h1>
+                <p style="margin-bottom: 10px;">Your Symptoms: {{ symptoms }}</p>
                 {% for dsymptom in dsymptoms %}
-                <p>{{ dsymptom.Common_Symptoms }}</p>
+                <p>Common Symptoms: {{ dsymptom.Common_Symptoms }}</p>
                 {% endfor %}
             </div>
             <div class="image" style="margin: 20px 0;">
