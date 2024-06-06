@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--FONT AWESOME-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../static/css/style.css">
+    <link rel="stylesheet" href="../static/css/results.css">
+    <style>
+        .diagnosis-details-1-child {
+            display: none;
+        }
+
+        .diagnosis-details-1-child.active {
+            display: block;
+        }
+    </style>
+    <title>DLLTP Diagnosis</title>
+</head>
+
+<body>
+    <header>
+        <div class="logo-div">
+            <a href="/">
+                <img src="../static/Images/logo.png" alt="logo">
+            </a>
+        </div>
+        <nav id="nav-links">
+            <p><a href="/about">About</a></p>
+            <p><a href="/extra">Extra</a></p>
+            <p><a href="/support">Support</a></p>
+            <p><a href="/diagnosis" class="nav-btn">Diagnose</a></p>
+        </nav>
+        <div class="hamburger" id="hamburger">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+        </div>
+    </header>
+    <hr>
+    <main>
+        <section class="description">
+            <div class="description-1">
+                <div class="diagnosis">
+                    <h1>Disease Diagnosis: {{ prediction }}</h1>
+                    <p class="accuracy">Prediction accuracy: <strong><i>{{ accuracy|round(1) }}</i></strong>%</p>
+                    {% for detail in details %}
+                    <p class="diagnosis-p">
+                        {{ detail.Description }}
+                    </p>
+                </div>
+                <div class="details">
+                    <div class="right-border"></div>
+                    <div class="details-div">
+                        <h4>Risk</h4>
+                        <p>{{ detail.Risk_Level }}</p>
+                    </div>
+                    <div class="details-div">
+                        <h4>Abnormalities</h4>
+                        <p>{{detail.Risk_Factors}}</p>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+            <div class="diagnosis-details">
+                <div class="diagnosis-details-1 active">
+                    <h1>Remedies</h1>
+                    {% for remedy in remedies %}
+                    <div class="diagnosis-details-1-child">
+                        <h2>Proposed Remedy: {{ remedy.Remedy }}</h2>
+                        <div class="how">
+                            <h3>How</h3>
+                            <p>
+                                {{ remedy.How }}
+                            </p>
+                        </div>
+                        <div class="why">
+                            <h3>Why</h3>
+                            <p>
+                                {{ remedy.Why }}
+                            </p>
+                        </div>
+                    </div>
+                    {% endfor %}
+                    <div class="button-container">
+                        <div class="button-container">
+                            <button id="prevBtn">&lt;</button>
+                            <button id="nextBtn">&gt;</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="section-2">
+            <div class="diagnosis">
+                <h1>Common Symptoms</h1>
+                {% for dsymptom in dsymptoms %}
+                <p>{{ dsymptom.Common_Symptoms }}</p>
+                {% endfor %}
+            </div>
+            <div class="image" style="margin: 20px 0;">
+                {% for image in images %}
+                <p><img src="../static/Images/disease_images/{{ image.Image_URL }}"
+                        alt="Image of {{ prediction }}"></p>
+                {% endfor %}
+            </div>
+            <div class="">
+                <h3>Possible Diseases</h2>
+                    {% for dsymptom in dsymptoms %}
+                    <p>{{ dsymptom.Possible_Alternative_Diseases }}</p>
+                    {% endfor %}
+            </div>
+        </section>
+    </main>
+    <footer>
+        <div class="footer">
+            <div class="row">
+                <a href="#"><i class="fa fa-facebook"></i></a>
+                <a href="#"><i class="fa fa-instagram"></i></a>
+                <a href="#"><i class="fa fa-twitter"></i></a>
+            </div>
+
+            <div class="row">
+                <ul>
+                    <li><a href="#">Contact us</a></li>
+                    <li><a href="#">Our Services</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms & Conditions</a></li>
+                </ul>
+            </div>
+
+            <div class="row">
+                DLLTP Copyright © 2024 - All rights reserved || Designed By: DLLTP
+            </div>
+        </div>
+    </footer>
+
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var hamburger = document.getElementById('hamburger');
+            var navLinks = document.getElementById('nav-links');
+
+            if (hamburger && navLinks) {
+                hamburger.addEventListener('click', function () {
+                    navLinks.classList.toggle('active');
+                    hamburger.classList.toggle('open');
+                });
+            }
+        });
+
+        const diagnosisDetails = document.querySelectorAll('.diagnosis-details-1-child');
+        let currentSlide = 0;
+
+        function showSlide(n) {
+            diagnosisDetails.forEach(slide => {
+                slide.classList.remove('active');
+            });
+
+            currentSlide = (n + diagnosisDetails.length) % diagnosisDetails.length;
+
+            diagnosisDetails[currentSlide].classList.add('active');
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            diagnosisDetails[currentSlide].classList.add('active');
+
+            document.getElementById('prevBtn').addEventListener('click', () => {
+                showSlide(currentSlide - 1);
+            });
+
+            document.getElementById('nextBtn').addEventListener('click', () => {
+                showSlide(currentSlide + 1);
+            });
+        });
+
+    </script>
+</body>
+
+</html>

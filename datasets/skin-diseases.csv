@@ -1,0 +1,24 @@
+Redness,Itching,Rash,Blisters,Pain,Swelling,Scaling,Bumps,Discoloration,Dryness,Peeling,Sensitivity,Gender,Age,Disease
+1,1,1,0,0,0,1,1,0,0,0,1,Female,25,Eczema
+1,1,1,0,1,1,1,1,0,1,0,1,Male,30,Psoriasis
+0,1,1,1,1,1,0,1,1,1,0,0,Female,35,Contact Dermatitis
+1,0,1,0,0,0,0,0,0,0,1,1,Female,28,Atopic Dermatitis
+0,1,1,0,0,1,0,1,1,1,0,1,Male,32,Allergic Dermatitis
+1,1,0,1,0,0,1,1,0,1,0,0,Female,40,Seborrheic Dermatitis
+1,1,1,0,0,0,0,0,1,1,0,1,Male,27,Acne
+0,1,1,1,0,1,0,1,1,1,0,1,Female,38,Rosacea
+1,0,1,0,1,0,1,0,0,1,0,1,Male,31,Psoriasis
+0,1,1,0,1,1,1,0,0,1,1,1,Female,29,Folliculitis
+1,1,0,0,0,1,1,0,0,1,0,0,Female,42,Lichen Planus
+0,1,1,0,0,0,1,1,1,0,0,1,Male,34,Tinea Versicolor
+1,0,1,1,0,1,0,1,1,0,0,1,Female,37,Urticaria
+1,1,1,1,1,1,1,0,0,0,0,0,Male,8,Chickenpox
+1,1,1,1,1,1,1,0,0,0,0,0,Female,5,Chickenpox
+0,1,0,0,0,0,0,0,1,0,0,1,Male,22,Contact Dermatitis
+1,0,0,1,1,1,0,1,1,1,0,1,Female,45,Atopic Dermatitis
+1,0,1,0,0,0,1,0,0,1,0,0,Male,33,Seborrheic Dermatitis
+0,1,0,1,0,1,0,0,1,0,0,1,Female,26,Acne
+1,0,1,0,1,0,1,0,0,0,0,1,Male,36,Rosacea
+0,0,1,0,1,1,1,1,1,1,1,1,Female,39,Psoriasis
+1,1,1,0,0,0,1,1,0,1,0,0,Male,41,Folliculitis
+0,1,1,0,1,1,1,0,0,1,0,1,Female,43,Urticaria

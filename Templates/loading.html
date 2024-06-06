@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loading...</title>
+    <style>
+@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital@1&family=Lilita+One&family=Poppins:ital,wght@0,200;0,400;1,400&display=swap');
+        *{
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .cnt1 {
+            width: 100%;
+            height: 100%;
+
+            display: table;
+        }
+
+        .cnt2 {
+            width: 100%;
+            height: 100%;
+            display: table-cell;
+            text-align: center;
+            vertical-align: middle;
+        }
+
+        #main-loader {
+            width: 100%;
+            height: 100vh;
+            position: fixed;
+            background-color: #28AADC;
+            z-index: 99;
+            text-align: center;
+        }
+
+        .loader-parent {
+            width: 100%;
+            height: 100%;
+            text-align: center;
+            position: relative;
+        }
+
+        .loader-left {
+            width: 30%;
+            height: 100%;
+            display: inline-block;
+        }
+
+        .loader-right {
+            width: 49%;
+            height: 100%;
+            display: inline-block;
+        }
+
+        /* loader */
+
+        #loader {
+            background: #28AADC;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 70%;
+            border-right: 2px solid rgb(68, 68, 68);
+        }
+
+        #loader svg {
+            width: 60%;
+            height: 60%;
+            margin-top: 10%;
+        }
+
+        .triangle {
+            stroke-dasharray: 17;
+            animation: dash 3s cubic-bezier(0.35, 0.04, 0.63, 0.95) infinite;
+        }
+
+        .loading {
+            font-size: 7px;
+            animation: blink 2s ease-in-out infinite alternate;
+        }
+
+        #myDiv {
+            display: none;
+            text-align: center;
+        }
+
+        .loader-hints {
+            width: 70%;
+            margin-right: 5%;
+            display: inline-block;
+        }
+
+        .hints {
+            width: 100%;
+            text-align: left;
+        }
+
+        .hint-title {
+            width: 100%;
+            height: max-content;
+            text-align: left;
+            border-bottom: 1px solid #707070;
+        }
+
+        .hint-title h3 {
+            font-family: "roboto";
+            font-size: 3.7vw;
+            font-weight: bolder;
+            color: #fff;
+        }
+
+        .hint-description {
+            width: 100%;
+            height: 15vh;
+            text-align: left;
+        }
+
+        .hint-description p {
+            font-size: 1.5vw;
+            font-family: "roboto";
+            font-weight: bold;
+            line-height: 3vw;
+            color: #fff;
+            margin-top: 2%;
+            letter-spacing: 0.8px;
+        }
+
+        .hint-text:nth-child(1) {
+            display: block;
+        }
+
+        .hint-text {
+            display: none;
+        }
+
+        @keyframes dash {
+            to {
+                stroke-dashoffset: -136;
+            }
+        }
+
+        @keyframes blink {
+            50% {
+                opacity: 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div id="main-loader">
+        <div class="loader-parent">
+            <div class="loader-left">
+                <div class="cnt1">
+                    <div class="cnt2">
+                        <!-- The loader -->
+
+
+                        <div id="loader">
+                            <svg height="200" viewBox="0 0 40 60" width="200">
+                                <polygon class="triangle" fill="none" points="16,1 32,32 1,32" stroke="#fff"
+                                    stroke-width="1"></polygon>
+                                <text class="loading" fill="#fff" x="0" y="45">
+                                    &nbsp;&nbspLoading
+                                </text>
+                            </svg>
+                        </div>
+                        <!-- The loader -->
+                    </div>
+                </div>
+            </div>
+            <div class="loader-right">
+                <div class="cnt1">
+                    <div class="cnt2">
+                        <div class="loader-hints">
+                            <div class="hints">
+                                <div class="hint-title">
+                                    <h3>Doctors Notes</h3>
+                                </div>
+                                <div class="hint-description">
+                                    <p class="hint-text">
+                                        Eat Healthy Food.
+                                    </p>
+
+                                    <p class="hint-text">
+                                        Get Adequate Sleep.
+                                    </p>
+
+                                    <p class="hint-text">
+                                        Stay Hydrated.
+                                    </p>
+
+                                    <p class="hint-text">
+                                        Incorporate Physical Activity in Your Lifestyle.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            var hintCounter = 1;
+
+            setInterval(() => {
+                var hintText = document.querySelector(".hint-text:nth-child(" + hintCounter + ")");
+                if (hintText) {
+                    hintCounter++;
+                    hintText.style.opacity = 0;
+                    setTimeout(() => {
+                        hintText.style.opacity = 1;
+                    }, 1000);
+                }
+
+                if (hintCounter === 5) {
+                    hintCounter = 1;
+                }
+            }, 6000);
+        });
+
+    </script>
+</body>
+
+</html>

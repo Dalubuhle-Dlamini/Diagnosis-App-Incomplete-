@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!--FONT AWESOME-->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link rel="stylesheet" href="../static/css/style.css" />
+    <style>
+      .diagnosis-buttons {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin: 50px;
+      }
+
+      h1 {
+        font-size: 180%;
+      }
+
+      .button-container a {
+        cursor: pointer;
+        color: black;
+        font-weight: 600;
+        padding: 10px 20px;
+        width: 100%;
+        background-color: #65ebb6;
+        border-radius: 14px;
+        -webkit-border-radius: 14px;
+        -moz-border-radius: 14px;
+        -ms-border-radius: 14px;
+        -o-border-radius: 14px;
+        box-shadow: 3px 2px 3px rgba(102, 235, 182, 0.2);
+        border: solid 1px #000;
+        text-align: center;
+      }
+
+      .container {
+        max-width: 900px;
+        text-align: center;
+      }
+
+      .card {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background-color: #f9f9f9;
+        border: 1px solid #ddd;
+        border-radius: 10px;
+        padding: 20px;
+        margin: 10px;
+        width: 250px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        transition: box-shadow 0.3s;
+      }
+
+      .card:hover {
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      }
+
+      .card img {
+        border-radius: 50%;
+        width: 100px;
+        height: 100px;
+        object-fit: cover;
+        margin-bottom: 15px;
+      }
+
+      .card h3 {
+        margin: 10px 0;
+        font-size: 20px;
+      }
+
+      .card p {
+        margin: 5px 0;
+        color: #555;
+      }
+
+      .button-container {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 20px;
+      }
+
+      .button-container button {
+        cursor: pointer;
+        color: black;
+        font-weight: 600;
+        /* background-color: #28AADC; */
+        background-color: #65ebb6;
+        padding: 10px 15px;
+        border-radius: 14px;
+        -webkit-border-radius: 14px;
+        -moz-border-radius: 14px;
+        -ms-border-radius: 14px;
+        -o-border-radius: 14px;
+        box-shadow: 3px 2px 3px rgba(102, 235, 182, 0.2);
+        border: solid 1px #000;
+        margin-top: 20px;
+      }
+
+      .button-container button:hover {
+        background-color: #0056b3;
+      }
+
+      a.disabled {
+        pointer-events: none;
+        cursor: not-allowed; /* Change cursor to not-allowed */
+        color: #999; /* Change text color to a muted gray */
+        background-color: #f0f0f0; /* Change background color to a light gray */
+        border-radius: 14px;
+        -webkit-border-radius: 14px;
+        -moz-border-radius: 14px;
+        -ms-border-radius: 14px;
+        -o-border-radius: 14px;
+        box-shadow: none; /* Remove box shadow */
+        border: solid 1px #ccc; /* Change border color to a light gray */
+        margin-top: 20px;
+        content: "";
+      }
+
+      a.disabled::after{
+        content: "Coming Soon";
+      }
+    </style>
+    <title>DLLTP Diagnosis</title>
+  </head>
+
+  <body>
+    <header>
+      <div class="logo-div">
+        <a href="/">
+          <img src="./static/Images/logo.png" alt="logo" />
+        </a>
+      </div>
+      <nav id="nav-links">
+        <p><a href="/about">About</a></p>
+        <p><a href="/extra">Extra</a></p>
+        <p><a href="/support">Support</a></p>
+        <p><a href="/what-diagnosis" class="nav-btn">Diagnose</a></p>
+      </nav>
+      <div class="hamburger" id="hamburger">
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+      </div>
+    </header>
+    <hr />
+    <main>
+      <section class="diagnosis-buttons">
+        <div class="container">
+          <h1>Choose Doctor To Diagnose You</h1>
+          <p>NB: Every Dianosis will come with its full analysis report</p>
+          <div class="button-container" id="doctor-cards">
+            <div class="card">
+              <img src="../static/Images/doc1.png" alt="Doctor 1" />
+              <h3>Doctor 1</h3>
+              <p style="margin-bottom: 20px">General Practioner</p>
+              <a href="/common-diagnosis">Diagnose</a>
+            </div>
+            <div class="card">
+              <img src="../static/Images/doc1.png" alt="Doctor 2" />
+              <h3>Doctor 2</h3>
+              <p style="margin-bottom: 20px">STIs</p>
+              <a href="/sti-diagnosis" class="disabled"></a>
+            </div>
+            <div class="card">
+              <img src="../static/Images/doc1.png" alt="Doctor 3" />
+              <h3>Doctor 3</h3>
+              <p style="margin-bottom: 20px">Skin Doctor</p>
+              <a href="/skin-diagnosis" class="disabled"></a>
+            </div>
+            <div class="card">
+              <img src="../static/Images/doc1.png" alt="Doctor 3" />
+              <h3>Doctor 4</h3>
+              <p style="margin-bottom: 20px">Other (Select if not Sure)</p>
+              <a href="/other-diagnosis" class="disabled"></a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer>
+      <div class="footer">
+        <div class="row">
+          <a href="#"><i class="fa fa-facebook"></i></a>
+          <a href="#"><i class="fa fa-instagram"></i></a>
+          <a href="#"><i class="fa fa-twitter"></i></a>
+        </div>
+
+        <div class="row">
+          <ul>
+            <li><a href="#">Contact us</a></li>
+            <li><a href="#">Our Services</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Terms & Conditions</a></li>
+          </ul>
+        </div>
+
+        <div class="row">
+          DLLTP Copyright © 2024 - All rights reserved || Designed By: DLLTP
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        var hamburger = document.getElementById("hamburger");
+        var navLinks = document.getElementById("nav-links");
+
+        if (hamburger && navLinks) {
+          hamburger.addEventListener("click", function () {
+            navLinks.classList.toggle("active");
+            hamburger.classList.toggle("open");
+          });
+        }
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,16 @@
+Genital Itching,Genital Discharge,Painful Urination,Vaginal Discharge,Vaginal Odor,Testicular Pain,Pelvic Pain,Fever,Rash,Abdominal Pain,Gender,STD
+1,1,1,1,1,0,0,0,0,0,Female,Chlamydia
+1,1,0,0,0,1,0,0,0,0,Male,Gonorrhea
+1,1,1,1,0,0,1,0,0,0,Female,Genital Herpes
+1,1,1,1,0,0,0,0,0,0,Male,Syphilis
+1,1,1,1,1,1,1,0,0,0,Female,Trichomoniasis
+0,1,1,1,0,0,0,1,1,1,Male,HIV
+0,1,1,1,0,0,0,1,1,1,Female,HIV
+0,1,1,1,0,0,0,1,1,1,Male,Hepatitis B
+0,1,1,1,0,0,0,1,1,1,Female,Hepatitis B
+1,1,1,1,0,0,0,0,0,0,Male,Genital Warts
+1,1,1,1,0,0,0,0,0,0,Female,Genital Warts
+1,1,1,0,1,0,0,0,0,0,Male,Human Papillomavirus (HPV)
+1,1,1,0,1,0,0,0,0,0,Female,Human Papillomavirus (HPV)
+1,1,1,1,0,0,0,1,0,0,Male,Hepatitis C
+1,1,1,1,0,0,0,1,0,0,Female,Hepatitis C

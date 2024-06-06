@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!--FONT AWESOME-->
+        <link rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="../static/css/style.css">
+        <link rel="stylesheet" href="../static/css/diagnosis.css">
+        <style>
+            .section-diagnosis {
+                max-width: 600px;
+                margin: 0 auto;
+                padding: 20px;
+            }
+            .form-group {
+                margin-bottom: 15px;
+            }
+            .form-group label {
+                display: block;
+                margin-bottom: 5px;
+                font-size: 16px;
+            }
+            .form-group input, .form-group select {
+                width: 100%;
+                padding: 8px;
+                border: 1px solid #ddd;
+                border-radius: 5px;
+                box-sizing: border-box;
+            }
+        </style>
+        <title>DLLTP Diagnosis</title>
+    </head>
+</head>
+
+<body>
+    <header>
+        <div class="logo-div">
+            <a href="/">
+                <img src="../static/Images/logo.png" alt="logo">
+            </a>
+        </div>
+        <nav id="nav-links">
+            <p><a href="/about">About</a></p>
+            <p><a href="/extra">Extra</a></p>
+            <p><a href="/support">Support</a></p>
+            <p><a href="/diagnose" class="nav-btn">Diagnose</a></p>
+        </nav>
+        <div class="hamburger" id="hamburger">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+        </div>
+    </header>
+    <main>
+        <form action="/predict" method="post">
+            <section class="section-diagnosis">
+                    <div class="form-group">
+                        <label for="age">Age:</label>
+                        <input type="number" id="age" name="age" min="0" max="120" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="gender">Gender:</label>
+                        <select id="gender" name="gender" required>
+                            <option value="" disabled selected>Select your gender</option>
+                            <option value="Male">Male</option>
+                            <option value="Female">Female</option>
+                        </select>
+                    </div>
+            
+                    <fieldset class="checkbox-group">
+                        <legend class="checkbox-group-legend">How are you feeling?</legend>
+            
+                        <div class="checkbox">
+                            <label class="checkbox-wrapper">
+                                <input type="checkbox" class="checkbox-input" id="fever" name="Fever">
+                                <span class="checkbox-tile">
+                                    <span class="checkbox-icon">
+                                        <img src="../static/Images/icons/fever.png" alt="icon for fever">
+                                    </span>
+                                    <span class="checkbox-label">Fever</span>
+                                </span>
+                            </label>
+                        </div>
+                        <div class="checkbox">
+                            <label class="checkbox-wrapper">
+                                <input type="checkbox" class="checkbox-input" id="cough" name="Cough">
+                                <span class="checkbox-tile">
+                                    <span class="checkbox-icon">
+                                        <img src="../static/Images/icons/cough.png" alt="icon for cough">
+                                    </span>
+                                    <span class="checkbox-label">Cough</span>
+                                </span>
+                            </label>
+                        </div>
+                        <div class="checkbox">
+                            <label class="checkbox-wrapper">
+                                <input type="checkbox" class="checkbox-input" id="headache" name="Headache">
+                                <span class="checkbox-tile">
+                                    <span class="checkbox-icon">
+                                        <img src="../static/Images/icons/headache.png" alt="icon for headache">
+                                    </span>
+                                    <span class="checkbox-label">Headache</span>
+                                </span>
+                            </label>
+                        </div>
+                        <div class="checkbox">
+                            <label class="checkbox-wrapper">
+                                <input type="checkbox" class="checkbox-input" id="sore_throat" name="Sore Throat">
+                                <span class="checkbox-tile">
+                                    <span class="checkbox-icon">
+                                        <img src="../static/Images/icons/sore_throat.png" alt="icon for sore throat">
+                                    </span>
+                                    <span class="checkbox-label">Sore Throat</span>
+                                </span>
+                            </label>
+                        </div>
+                        <div class="checkbox">
+                            <label class="checkbox-wrapper">
+                                <input type="checkbox" class="checkbox-input" id="runny_nose" name="Runny Nose">
+                                <span class="checkbox-tile">
+                                    <span class="checkbox-icon">
+                                        <img src="../static/Images/icons/runny_nose.png" alt="icon for runny nose">
+                                    </span>
+                                    <span class="checkbox-label">Runny Nose</span>
+                                </span>
+                            </label>
+                        </div>
+                        <div class="checkbox">
+                            <label class="checkbox-wrapper">
+                                <input type="checkbox" class="checkbox-input" id="fatigue" name="Fatigue">
+                                <span class="checkbox-tile">
+                                    <span class="checkbox-icon">
+                                        <img src="../static/Images/icons/fatigue.png" alt="icon for fatigue">
+                                    </span>
+                                    <span class="checkbox-label">Fatigue</span>
+                                </span>
+                            </label>
+                        </div>
+                        <div class="checkbox">
+                            <label class="checkbox-wrapper">
+                                <input type="checkbox" class="checkbox-input" id="chills" name="Chills">
+                                <span class="checkbox-tile">
+                                    <span class="checkbox-icon">
+                                        <img src="../static/Images/icons/chills.png" alt="icon for chills">
+                                    </span>
+                                    <span class="checkbox-label">Chills</span>
+                                </span>
+                            </label>
+                        </div>
+                        <div class="checkbox">
+                            <label class="checkbox-wrapper">
+                                <input type="checkbox" class="checkbox-input" id="body_aches" name="Body Aches">
+                                <span class="checkbox-tile">
+                                    <span class="checkbox-icon">
+                                        <img src="../static/Images/icons/body_aches.png" alt="icon for body aches">
+                                    </span>
+                                    <span class="checkbox-label">Body Aches</span>
+                                </span>
+                            </label>
+                        </div>
+                        <div class="checkbox">
+                            <label class="checkbox-wrapper">
+                                <input type="checkbox" class="checkbox-input" id="shortness_of_breath" name="Shortness of Breath">
+                                <span class="checkbox-tile">
+                                    <span class="checkbox-icon">
+                                        <img src="../static/Images/icons/shortness_of_breath.png" alt="icon for shortness of breath">
+                                    </span>
+                                    <span class="checkbox-label">Shortness of Breath</span>
+                                </span>
+                            </label>
+                        </div>
+                        <div class="checkbox">
+                            <label class="checkbox-wrapper">
+                                <input type="checkbox" class="checkbox-input" id="chest_pain" name="Chest Pain">
+                                <span class="checkbox-tile">
+                                    <span class="checkbox-icon">
+                                        <img src="../static/Images/icons/chest_pain.png" alt="icon for chest pain">
+                                    </span>
+                                    <span class="checkbox-label">Chest Pain</span>
+                                </span>
+                            </label>
+                        </div>
+                        <div class="checkbox">
+                            <label class="checkbox-wrapper">
+                                <input type="checkbox" class="checkbox-input" id="nausea" name="Nausea">
+                                <span class="checkbox-tile">
+                                    <span class="checkbox-icon">
+                                        <img src="../static/Images/icons/nausea.png" alt="icon for nausea">
+                                    </span>
+                                    <span class="checkbox-label">Nausea</span>
+                                </span>
+                            </label>
+                        </div>
+                        <div class="checkbox">
+                            <label class="checkbox-wrapper">
+                                <input type="checkbox" class="checkbox-input" id="vomiting" name="Vomiting">
+                                <span class="checkbox-tile">
+                                    <span class="checkbox-icon">
+                                        <img src="../static/Images/icons/vomiting.png" alt="icon for vomiting">
+                                    </span>
+                                    <span class="checkbox-label">Vomiting</span>
+                                </span>
+                            </label>
+                        </div>
+                        <div class="checkbox">
+                            <label class="checkbox-wrapper">
+                                <input type="checkbox" class="checkbox-input" id="diarrhea" name="Diarrhea">
+                                <span class="checkbox-tile">
+                                    <span class="checkbox-icon">
+                                        <img src="../static/Images/icons/diarrhea.png" alt="icon for diarrhea">
+                                    </span>
+                                    <span class="checkbox-label">Diarrhea</span>
+                                </span>
+                            </label>
+                        </div>
+                        <div class="checkbox">
+                            <label class="checkbox-wrapper">
+                                <input type="checkbox" class="checkbox-input" id="rash" name="Rash">
+                                <span class="checkbox-tile">
+                                    <span class="checkbox-icon">
+                                        <img src="../static/Images/icons/rash.png" alt="icon for rash">
+                                    </span>
+                                    <span class="checkbox-label">Rash</span>
+                                </span>
+                            </label>
+                        </div>
+                        <div class="checkbox">
+                            <label class="checkbox-wrapper">
+                                <input type="checkbox" class="checkbox-input" id="joint_pain" name="Joint Pain">
+                                <span class="checkbox-tile">
+                                    <span class="checkbox-icon">
+                                        <img src="../static/Images/icons/joint_pain.png" alt="icon for joint pain">
+                                    </span>
+                                    <span class="checkbox-label">Joint Pain</span>
+                                </span>
+                            </label>
+                        </div>
+                        <div class="checkbox">
+                            <label class="checkbox-wrapper">
+                                <input type="checkbox" class="checkbox-input" id="abdominal_pain" name="Abdominal Pain">
+                                <span class="checkbox-tile">
+                                    <span class="checkbox-icon">
+                                        <img src="../static/Images/icons/abdominal_pain.png" alt="icon for abdominal pain">
+                                    </span>
+                                    <span class="checkbox-label">Abdominal Pain</span>
+                                </span>
+                            </label>
+                        </div>
+                        <div class="checkbox">
+                            <label class="checkbox-wrapper">
+                                <input type="checkbox" class="checkbox-input" id="polydipsia" name="Polydipsia">
+                                <span class="checkbox-tile">
+                                    <span class="checkbox-icon">
+                                        <img src="../static/Images/icons/polydipsia.png" alt="icon for polydipsia">
+                                    </span>
+                                    <span class="checkbox-label">Polydipsia</span>
+                                </span>
+                            </label>
+                        </div>
+                        <div class="checkbox">
+                            <label class="checkbox-wrapper">
+                                <input type="checkbox" class="checkbox-input" id="weight_loss" name="Weight Loss">
+                                <span class="checkbox-tile">
+                                    <span class="checkbox-icon">
+                                        <img src="../static/Images/icons/weight_loss.png" alt="icon for weight loss">
+                                    </span>
+                                    <span class="checkbox-label">Weight Loss</span>
+                                </span>
+                            </label>
+                        </div>
+                        <div class="checkbox">
+                            <label class="checkbox-wrapper">
+                                <input type="checkbox" class="checkbox-input" id="frequent_urination" name="Frequent Urination">
+                                <span class="checkbox-tile">
+                                    <span class="checkbox-icon">
+                                        <img src="../static/Images/icons/frequent_urination.png" alt="icon for frequent urination">
+                                    </span>
+                                    <span class="checkbox-label">Frequent Urination</span>
+                                </span>
+                            </label>
+                        </div>
+                        <div class="checkbox">
+                            <label class="checkbox-wrapper">
+                                <input type="checkbox" class="checkbox-input" id="dizziness" name="Dizziness">
+                                <span class="checkbox-tile">
+                                    <span class="checkbox-icon">
+                                        <img src="../static/Images/icons/dizziness.png" alt="icon for dizziness">
+                                    </span>
+                                    <span class="checkbox-label">Dizziness</span>
+                                </span>
+                            </label>
+                        </div>
+                        <div class="checkbox">
+                            <label class="checkbox-wrapper">
+                                <input type="checkbox" class="checkbox-input" id="difficulty_swallowing" name="Difficulty Swallowing">
+                                <span class="checkbox-tile">
+                                    <span class="checkbox-icon">
+                                        <img src="../static/Images/icons/difficulty_swallowing.png" alt="icon for difficulty swallowing">
+                                    </span>
+                                    <span class="checkbox-label">Difficulty swallowing</span>
+                                </span>
+                            </label>
+                        </div>
+                        <div class="checkbox">
+                            <label class="checkbox-wrapper">
+                                <input type="checkbox" class="checkbox-input" id="hoarse_voice" name="Hoarse Voice">
+                                <span class="checkbox-tile">
+                                    <span class="checkbox-icon">
+                                        <img src="../static/Images/icons/hoarse_voice.png" alt="icon for hoarse voice">
+                                    </span>
+                                    <span class="checkbox-label">Hoarse voice</span>
+                                </span>
+                            </label>
+                        </div>
+                    </fieldset>
+            </section>
+            <section class="button-section">
+                <button type="submit">Diagnose</button>
+            </section>
+        </form>
+    </main>
+    <footer>
+        <div class="footer">
+            <div class="row">
+                <a href="#"><i class="fa fa-facebook"></i></a>
+                <a href="#"><i class="fa fa-instagram"></i></a>
+                <a href="#"><i class="fa fa-twitter"></i></a>
+            </div>
+
+            <div class="row">
+                <ul>
+                    <li><a href="#">Contact us</a></li>
+                    <li><a href="#">Our Services</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms & Conditions</a></li>
+                </ul>
+            </div>
+
+            <div class="row">
+                DLLTP Copyright © 2024 - All rights reserved || Designed By: DLLTP
+            </div>
+        </div>
+    </footer>
+
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var hamburger = document.getElementById('hamburger');
+            var navLinks = document.getElementById('nav-links');
+
+            if (hamburger && navLinks) {
+                hamburger.addEventListener('click', function() {
+                    navLinks.classList.toggle('active');
+                    hamburger.classList.toggle('open');
+                });
+            }
+        });
+    </script>
+</body>
+
+</html>

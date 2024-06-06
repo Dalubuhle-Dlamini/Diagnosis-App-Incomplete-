@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--FONT AWESOME-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../static/css/style.css">
+    <title>DLLTP Diagnosis</title>
+</head>
+
+<body>
+    <header>
+        <div class="logo-div">
+            <a href="/">
+                <img src="../static/Images/logo.png" alt="logo">
+            </a>
+        </div>
+        <nav id="nav-links">
+            <p><a href="/about">About</a></p>
+            <p><a href="/extra">Extra</a></p>
+            <p><a href="/support">Support</a></p>
+            <p><a href="/diagnosis" class="nav-btn">Diagnose</a></p>
+        </nav>
+        <div class="hamburger" id="hamburger">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+        </div>
+    </header>
+    <hr>
+    <main>
+        <section class="first-section">
+            <div>
+                <img src="../static/Images/banner.png" alt="banner image">
+            </div>
+            <div class="section-1-buttons">
+                <p class="h1">Need Help <br> Diagnosing.</p>
+                <p class="btn-2"><a href="/diagnosis" class="nav-btn">Diagnose</a></p>
+            </div>
+        </section>
+        <section class="second-section">
+            <div>
+                <p class="sub-heading">
+                    How to Diagnose yourself?
+                </p>
+                <p class="para">
+                    In order to diagnose yourself you will need to access our website or application
+                    then tell us what your symptoms are we will then help you diagnose and give you some
+                    home remedies to help you get better in no time <strong style="color: #eee;">with no login
+                        needed</strong>
+                </p>
+            </div>
+            <div>
+                <img src="../static/Images/banner2.png" alt="banner image">
+            </div>
+        </section>
+    </main>
+    <footer>
+        <div class="footer">
+            <div class="row">
+                <a href="#"><i class="fa fa-facebook"></i></a>
+                <a href="#"><i class="fa fa-instagram"></i></a>
+                <a href="#"><i class="fa fa-twitter"></i></a>
+            </div>
+
+            <div class="row">
+                <ul>
+                    <li><a href="#">Contact us</a></li>
+                    <li><a href="#">Our Services</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms & Conditions</a></li>
+                </ul>
+            </div>
+
+            <div class="row">
+                DLLTP Copyright © 2024 - All rights reserved || Designed By: DLLTP
+            </div>
+        </div>
+    </footer>
+
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var hamburger = document.getElementById('hamburger');
+            var navLinks = document.getElementById('nav-links');
+
+            if (hamburger && navLinks) {
+                hamburger.addEventListener('click', function() {
+                    navLinks.classList.toggle('active');
+                    hamburger.classList.toggle('open');
+                });
+            }
+        });
+    </script>
+</body>
+
+</html>
